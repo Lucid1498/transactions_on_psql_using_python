@@ -64,9 +64,9 @@ ALTER TABLE Depot ADD CONSTRAINT pk_depot PRIMARY KEY (dep_id);
 
 ALTER TABLE Stock ADD CONSTRAINT pk_stock PRIMARY KEY (prod_id, dep_id);
 
-ALTER TABLE stock ADD CONSTRAINT fk_stock FOREIGN KEY (prod_id) REFERENCES product (prod_id) ON UPDATE CASCADE;
+ALTER TABLE stock ADD CONSTRAINT fk_stock FOREIGN KEY (prod_id) REFERENCES product (prod_id) ON UPDATE CASCADE ON DELETE CASCADE;
 
-ALTER TABLE stock ADD CONSTRAINT fk_stock2 FOREIGN KEY (dep_id) REFERENCES depot (dep_id) ON UPDATE CASCADE;
+ALTER TABLE stock ADD CONSTRAINT fk_stock2 FOREIGN KEY (dep_id) REFERENCES depot (dep_id) ON UPDATE CASCADE ON DELETE CASCADE;
 
 INSERT INTO Product (prod_id, pname, price) VALUES
 ('p1', 'tape', 2.5),
